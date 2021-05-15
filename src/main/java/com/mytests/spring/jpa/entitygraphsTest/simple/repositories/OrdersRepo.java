@@ -14,6 +14,7 @@ import java.util.List;
  */
 public interface OrdersRepo extends JpaRepository<Orders, Integer> {
     
+    // IDEA-269379 Spring Data: @org.springframework.data.jpa.repository.EntityGraph annotation support: provide references for #attributePaths
     @EntityGraph(attributePaths = {"customer"})
      List<Orders> findByUrgent(Boolean urgent);
 }

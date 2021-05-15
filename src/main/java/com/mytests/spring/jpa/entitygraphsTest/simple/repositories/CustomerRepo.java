@@ -13,6 +13,8 @@ import java.util.List;
  **
  */
 public interface CustomerRepo extends JpaRepository<Customer, Integer> {
+    
+    // IDEA-269378 Spring Data: @org.springframework.data.jpa.repository.EntityGraph annotation support: provide reference to entity graph
     @EntityGraph("customer.orders")
     List<Customer> findByVip(Boolean vip); 
 }
